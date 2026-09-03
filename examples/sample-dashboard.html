@@ -1,0 +1,738 @@
+<title>커뮤니티 사업 서류 현황판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+  :root {
+    --ground: #f3f5f8;
+    --surface: #ffffff;
+    --surface-2: #e9ecf2;
+    --ink: #171b21;
+    --ink-2: #4c5666;
+    --ink-3: #78828f;
+    --line: #d6dae2;
+    --line-strong: #b9bfca;
+    --accent: #1f3f6e;
+    --accent-soft: #e3e9f3;
+    --ok: #186a4b;
+    --ok-soft: #dbeae2;
+    --miss: #a8291d;
+    --miss-soft: #f7e1de;
+    --opt: #7d6318;
+    --opt-soft: #f1ead6;
+    --shadow: 0 1px 2px rgba(23, 27, 33, .06), 0 8px 24px -16px rgba(23, 27, 33, .28);
+
+    --font-display: "Noto Serif KR", "Batang", serif;
+    --font-ui: "Gothic A1", "Malgun Gothic", system-ui, sans-serif;
+
+    --step--1: .78rem;
+    --step-0: .9rem;
+    --step-1: 1.05rem;
+    --step-2: 1.4rem;
+    --step-3: 2rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #13161a;
+      --surface: #1a1e24;
+      --surface-2: #23282f;
+      --ink: #e7eaef;
+      --ink-2: #a7b0bc;
+      --ink-3: #7c8695;
+      --line: #2e343d;
+      --line-strong: #414a56;
+      --accent: #93b3e2;
+      --accent-soft: #1d2735;
+      --ok: #64c095;
+      --ok-soft: #16302a;
+      --miss: #ef8d80;
+      --miss-soft: #38201d;
+      --opt: #d6b665;
+      --opt-soft: #302819;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #13161a;
+    --surface: #1a1e24;
+    --surface-2: #23282f;
+    --ink: #e7eaef;
+    --ink-2: #a7b0bc;
+    --ink-3: #7c8695;
+    --line: #2e343d;
+    --line-strong: #414a56;
+    --accent: #93b3e2;
+    --accent-soft: #1d2735;
+    --ok: #64c095;
+    --ok-soft: #16302a;
+    --miss: #ef8d80;
+    --miss-soft: #38201d;
+    --opt: #d6b665;
+    --opt-soft: #302819;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font-ui);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 24px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── 머리글 ── */
+  .masthead { display: flex; flex-direction: column; gap: 10px; }
+
+  .eyebrow {
+    font-size: var(--step--1);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--step-3);
+    line-height: 1.25;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -.01em;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    color: var(--ink-3);
+    font-size: var(--step--1);
+  }
+  .meta b { color: var(--ink-2); font-weight: 500; }
+
+  /* ── 요약 타일 ── */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tile { background: var(--surface); padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+  .tile dt { font-size: var(--step--1); color: var(--ink-2); font-weight: 500; }
+  .tile dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+  .tile dd small { font-family: var(--font-ui); font-size: var(--step--1); font-weight: 500; color: var(--ink-3); }
+  .tile.is-alert dd { color: var(--miss); }
+  .tile.is-ok dd { color: var(--ok); }
+
+  /* ── 섹션 ── */
+  section { display: flex; flex-direction: column; gap: 14px; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-note { margin: 0; color: var(--ink-2); font-size: var(--step--1); max-width: 62ch; }
+
+  /* ── 독촉 순위 ── */
+  .chase { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .chase-row {
+    background: var(--surface);
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) 64px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  .chase-doc { font-weight: 700; }
+  .chase-count {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--miss);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .chase-groups { color: var(--ink-2); font-size: var(--step--1); }
+  .chase-empty { background: var(--surface); padding: 16px; color: var(--ok); font-weight: 500; }
+
+  /* ── 도구 모음 ── */
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+  label.field { display: inline-flex; align-items: center; gap: 8px; font-size: var(--step--1); color: var(--ink-2); }
+  select, .toggle {
+    font-family: inherit;
+    font-size: var(--step--1);
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    padding: 6px 10px;
+  }
+  .toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+  .toggle input { accent-color: var(--accent); margin: 0; }
+  select:focus-visible, .toggle:focus-within, td:focus-visible, th:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-left: auto; font-size: var(--step--1); color: var(--ink-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line-strong); display: inline-block; }
+  .swatch.ok { background: var(--ok-soft); border-color: var(--ok); }
+  .swatch.miss { background: var(--miss-soft); border-color: var(--miss); }
+  .swatch.opt { background: var(--opt-soft); border-color: var(--opt); }
+
+  /* ── 매트릭스 ── */
+  .matrix-scroll {
+    overflow: auto;
+    max-height: 74vh;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  table { border-collapse: separate; border-spacing: 0; font-size: var(--step--1); }
+  caption { text-align: left; padding: 10px 14px; color: var(--ink-3); font-size: var(--step--1); }
+
+  th, td { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  thead th { background: var(--surface-2); color: var(--ink-2); font-weight: 500; }
+
+  /* 열 헤더 = 단체 (세로쓰기) */
+  .group-col {
+    position: sticky; top: 0; z-index: 3;
+    height: 176px;
+    width: 36px;
+    min-width: 36px;
+    padding: 10px 0 8px;
+    vertical-align: bottom;
+    background: var(--surface-2);
+  }
+  .group-col .col-inner { display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; }
+  .group-col .vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    max-height: 128px;
+    overflow: hidden;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: .02em;
+    flex: 0 1 auto;
+  }
+  .group-col .col-rate {
+    font-size: .68rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-3);
+    font-weight: 700;
+    margin-top: auto;
+  }
+  .group-col.has-missing .col-rate { color: var(--miss); }
+  .group-col.is-complete .col-rate { color: var(--ok); }
+
+  /* 좌상단 코너 */
+  .corner {
+    position: sticky; left: 0; top: 0; z-index: 6;
+    background: var(--surface-2);
+    text-align: left;
+    vertical-align: bottom;
+    padding: 8px 14px 12px;
+    min-width: 216px;
+    max-width: 300px;
+    border-right: 1px solid var(--line-strong);
+  }
+  .corner span { font-size: var(--step--1); color: var(--ink-3); font-weight: 500; }
+
+  /* 행 헤더 = 서류명 (가로쓰기) */
+  .doc-row-head {
+    position: sticky; left: 0; z-index: 2;
+    background: var(--surface);
+    text-align: left;
+    padding: 7px 14px;
+    min-width: 216px;
+    max-width: 300px;
+    border-right: 1px solid var(--line-strong);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .doc-row-head .req {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: .66rem;
+    font-weight: 700;
+    padding: 0 5px;
+    border-radius: 3px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    vertical-align: 1px;
+  }
+  .doc-row-head .req.optional { background: var(--surface-2); color: var(--ink-3); }
+  .doc-row-head .stage-tag { display: block; font-size: .68rem; color: var(--ink-3); font-weight: 500; }
+
+  /* 단계 구분 행 */
+  tr.band th {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: .06em;
+    font-size: var(--step--1);
+    padding: 0;
+    text-align: left;
+    border-right: none;
+  }
+  tr.band th span {
+    position: sticky; left: 0;
+    display: block;
+    padding: 6px 14px;
+    white-space: nowrap;
+  }
+
+  /* 행 끝 제출 집계 (우측 고정) */
+  .row-count {
+    position: sticky; right: 0; z-index: 2;
+    width: 72px;
+    min-width: 72px;
+    text-align: right;
+    padding: 0 12px;
+    background: var(--surface);
+    border-left: 1px solid var(--line-strong);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--ok);
+  }
+  .row-count.partial { color: var(--miss); }
+  .row-count.neutral { color: var(--ink-3); }
+  .corner-right {
+    position: sticky; right: 0; top: 0; z-index: 6;
+    width: 72px;
+    min-width: 72px;
+    background: var(--surface-2);
+    border-left: 1px solid var(--line-strong);
+    vertical-align: bottom;
+    padding: 8px 12px 12px;
+    text-align: right;
+    font-size: var(--step--1);
+    color: var(--ink-3);
+  }
+  tr.band .row-count { background: var(--accent-soft); border-left-color: var(--accent-soft); }
+
+  tbody tr:not(.band):hover .doc-row-head,
+  tbody tr:not(.band):hover td { background: var(--surface-2); }
+
+  /* 상태 셀 */
+  td.cell {
+    width: 34px;
+    min-width: 34px;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: .8rem;
+    line-height: 34px;
+    user-select: none;
+  }
+  td.cell.found { background: var(--ok-soft); color: var(--ok); }
+  td.cell.missing { background: var(--miss-soft); color: var(--miss); }
+  td.cell.optional { background: var(--opt-soft); color: var(--opt); }
+  td.cell.is-active { box-shadow: inset 0 0 0 2px var(--accent); }
+
+  /* ── 상세 패널 ── */
+  .detail {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 92px;
+  }
+  .detail-title { font-family: var(--font-display); font-weight: 700; font-size: var(--step-1); margin: 0; }
+  .detail-sub { margin: 0; color: var(--ink-2); font-size: var(--step--1); }
+  .files { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .files li {
+    font-size: var(--step--1);
+    color: var(--ink-2);
+    padding: 5px 9px;
+    background: var(--surface-2);
+    border-radius: 4px;
+    word-break: break-all;
+  }
+  .pill {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+  }
+  .pill.found { color: var(--ok); background: var(--ok-soft); }
+  .pill.missing { color: var(--miss); background: var(--miss-soft); }
+  .pill.optional { color: var(--opt); background: var(--opt-soft); }
+
+  footer { color: var(--ink-3); font-size: var(--step--1); border-top: 1px solid var(--line); padding-top: 16px; }
+  footer code { background: var(--surface-2); padding: 1px 5px; border-radius: 3px; }
+
+  @media print {
+    body { background: #fff; }
+    .toolbar, .detail { display: none; }
+    .matrix-scroll { max-height: none; overflow: visible; box-shadow: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">커뮤니티 사업 서류 점검</p>
+    <h1 id="title">서류 제출 현황판</h1>
+    <div class="meta">
+      <span>점검 폴더 <b id="meta-root">-</b></span>
+      <span>점검 시각 <b id="meta-time">-</b></span>
+      <span>기준 <b id="meta-checklist">체크리스트</b></span>
+    </div>
+  </header>
+
+  <dl class="tiles" id="tiles"></dl>
+
+  <section>
+    <h2>지금 독촉할 서류</h2>
+    <p class="section-note">필수 서류 중 빠진 단체가 많은 순입니다. 위쪽 항목은 개별 연락보다 단체 공지 한 번이 빠릅니다.</p>
+    <div class="chase" id="chase"></div>
+  </section>
+
+  <section>
+    <h2>단체별 제출 현황</h2>
+    <div class="toolbar">
+      <label class="field">단계
+        <select id="stage-filter"></select>
+      </label>
+      <label class="toggle"><input type="checkbox" id="only-missing"> 누락 있는 단체만</label>
+      <label class="toggle"><input type="checkbox" id="sort-missing"> 누락 많은 서류 순</label>
+      <div class="legend">
+        <span><i class="swatch ok"></i>제출</span>
+        <span><i class="swatch miss"></i>누락(필수)</span>
+        <span><i class="swatch opt"></i>미제출(선택)</span>
+      </div>
+    </div>
+
+    <div class="matrix-scroll">
+      <table id="matrix">
+        <caption>행은 서류, 열은 단체입니다. 맨 오른쪽 숫자는 그 서류를 낸 단체 수, 열 헤더 아래 숫자는 그 단체의 필수 충족률입니다. 칸을 누르면 어떤 파일이 잡혔는지 아래에 표시됩니다.</caption>
+      </table>
+    </div>
+
+    <div class="detail" id="detail" aria-live="polite">
+      <p class="detail-title">칸을 선택하세요</p>
+      <p class="detail-sub">단체와 서류가 만나는 칸을 누르면 매칭된 실제 파일명이 나옵니다. 엉뚱한 파일이 잡혔다면 체크리스트의 키워드를 고치세요.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>이 현황판은 폴더의 <b>파일명</b>을 기준으로 판단합니다. 파일 내용은 열어보지 않으므로, 파일명이 서류 성격과 다르면 결과도 달라집니다. 기준을 바꾸려면 <code>~/.claude/skills/doc-check/references/checklist.md</code> 의 표를 수정하세요.</p>
+  </footer>
+</div>
+
+<script>
+  const DATA = {"generatedAt":"2026-09-03T13:42:03.446Z","root":"[예시 데이터] 2026 커뮤니티 사업 — 실제 사업 폴더가 아닙니다","checklist":"C:\\Users\\love-\\.claude\\skills\\doc-check\\references\\checklist.md","stageFilter":null,"stages":["신청·선정","협약·교부","집행·중간","정산·결과"],"items":[{"stage":"신청·선정","name":"참여신청서","required":true},{"stage":"신청·선정","name":"사업계획서","required":true},{"stage":"신청·선정","name":"예산(산출)내역서","required":true},{"stage":"신청·선정","name":"개인정보 수집·이용 동의서","required":true},{"stage":"신청·선정","name":"회원(참여자) 명부","required":true},{"stage":"신청·선정","name":"통장 사본","required":true},{"stage":"신청·선정","name":"단체 증빙(정관·규약)","required":false},{"stage":"신청·선정","name":"고유번호증·사업자등록증","required":false},{"stage":"신청·선정","name":"대표자 신분증 사본","required":false},{"stage":"협약·교부","name":"협약서(약정서)","required":true},{"stage":"협약·교부","name":"보조금 교부신청서","required":true},{"stage":"협약·교부","name":"보조금 지급요청서","required":true},{"stage":"협약·교부","name":"청렴이행 서약서","required":false},{"stage":"집행·중간","name":"활동 사진","required":true},{"stage":"집행·중간","name":"출석부(참여자 확인)","required":true},{"stage":"집행·중간","name":"회의록","required":false},{"stage":"집행·중간","name":"강사 이력서·프로필","required":false},{"stage":"집행·중간","name":"견적서","required":false},{"stage":"집행·중간","name":"계약서(용역·물품)","required":false},{"stage":"집행·중간","name":"중간보고서","required":false},{"stage":"정산·결과","name":"결과보고서","required":true},{"stage":"정산·결과","name":"정산보고서","required":true},{"stage":"정산·결과","name":"집행내역 총괄표","required":true},{"stage":"정산·결과","name":"지출 증빙(영수증·전표)","required":true},{"stage":"정산·결과","name":"이체(입금) 확인증","required":true},{"stage":"정산·결과","name":"통장 거래내역","required":true},{"stage":"정산·결과","name":"강사비·인건비 지급 증빙","required":false},{"stage":"정산·결과","name":"집행잔액 반납 확인","required":false}],"groups":[{"group":"가온마을 공동체","fileCount":17,"requiredTotal":17,"requiredFound":17,"missingRequired":[],"missingOptional":["단체 증빙(정관·규약)","고유번호증·사업자등록증","대표자 신분증 사본","청렴이행 서약서","회의록","강사 이력서·프로필","견적서","계약서(용역·물품)","중간보고서","강사비·인건비 지급 증빙","집행잔액 반납 확인"],"checks":[{"stage":"신청·선정","name":"참여신청서","required":true,"status":"found","matches":["보조금 교부신청서.hwp","참여신청서_가온마을.pdf"]},{"stage":"신청·선정","name":"사업계획서","required":true,"status":"found","matches":["사업계획서(최종).hwp"]},{"stage":"신청·선정","name":"예산(산출)내역서","required":true,"status":"found","matches":["예산 산출내역서.xlsx"]},{"stage":"신청·선정","name":"개인정보 수집·이용 동의서","required":true,"status":"found","matches":["개인정보 수집이용 동의서.pdf"]},{"stage":"신청·선정","name":"회원(참여자) 명부","required":true,"status":"found","matches":["회원명부.xlsx"]},{"stage":"신청·선정","name":"통장 사본","required":true,"status":"found","matches":["통장사본.jpg"]},{"stage":"신청·선정","name":"단체 증빙(정관·규약)","required":false,"status":"missing","matches":[]},{"stage":"신청·선정","name":"고유번호증·사업자등록증","required":false,"status":"missing","matches":[]},{"stage":"신청·선정","name":"대표자 신분증 사본","required":false,"status":"missing","matches":[]},{"stage":"협약·교부","name":"협약서(약정서)","required":true,"status":"found","matches":["협약서.pdf"]},{"stage":"협약·교부","name":"보조금 교부신청서","required":true,"status":"found","matches":["보조금 교부신청서.hwp"]},{"stage":"협약·교부","name":"보조금 지급요청서","required":true,"status":"found","matches":["지급요청서.hwp"]},{"stage":"협약·교부","name":"청렴이행 서약서","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"활동 사진","required":true,"status":"found","matches":["집행·중간/활동사진_01.jpg","통장사본.jpg"]},{"stage":"집행·중간","name":"출석부(참여자 확인)","required":true,"status":"found","matches":["집행·중간/출석부.xlsx"]},{"stage":"집행·중간","name":"회의록","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"강사 이력서·프로필","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"견적서","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"계약서(용역·물품)","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"중간보고서","required":false,"status":"missing","matches":[]},{"stage":"정산·결과","name":"결과보고서","required":true,"status":"found","matches":["정산/결과보고서.hwp"]},{"stage":"정산·결과","name":"정산보고서","required":true,"status":"found","matches":["정산/결과보고서.hwp","정산/영수증 모음.pdf","정산/이체확인증.pdf","정산/정산보고서.hwp","정산/집행내역 총괄표.xlsx","정산/통장 거래내역.pdf"]},{"stage":"정산·결과","name":"집행내역 총괄표","required":true,"status":"found","matches":["정산/집행내역 총괄표.xlsx"]},{"stage":"정산·결과","name":"지출 증빙(영수증·전표)","required":true,"status":"found","matches":["정산/영수증 모음.pdf"]},{"stage":"정산·결과","name":"이체(입금) 확인증","required":true,"status":"found","matches":["정산/이체확인증.pdf"]},{"stage":"정산·결과","name":"통장 거래내역","required":true,"status":"found","matches":["정산/통장 거래내역.pdf"]},{"stage":"정산·결과","name":"강사비·인건비 지급 증빙","required":false,"status":"missing","matches":[]},{"stage":"정산·결과","name":"집행잔액 반납 확인","required":false,"status":"missing","matches":[]}]},{"group":"달래안 주민모임","fileCount":15,"requiredTotal":17,"requiredFound":14,"missingRequired":["개인정보 수집·이용 동의서","이체(입금) 확인증","통장 거래내역"],"missingOptional":["고유번호증·사업자등록증","대표자 신분증 사본","청렴이행 서약서","회의록","강사 이력서·프로필","견적서","계약서(용역·물품)","중간보고서","강사비·인건비 지급 증빙","집행잔액 반납 확인"],"checks":[{"stage":"신청·선정","name":"참여신청서","required":true,"status":"found","matches":["교부신청서.hwp","지원서.hwp"]},{"stage":"신청·선정","name":"사업계획서","required":true,"status":"found","matches":["활동계획서.hwp"]},{"stage":"신청·선정","name":"예산(산출)내역서","required":true,"status":"found","matches":["예산내역.xlsx"]},{"stage":"신청·선정","name":"개인정보 수집·이용 동의서","required":true,"status":"missing","matches":[]},{"stage":"신청·선정","name":"회원(참여자) 명부","required":true,"status":"found","matches":["명부.xlsx","출석 서명부.pdf"]},{"stage":"신청·선정","name":"통장 사본","required":true,"status":"found","matches":["통장사본.jpg"]},{"stage":"신청·선정","name":"단체 증빙(정관·규약)","required":false,"status":"found","matches":["정관.pdf"]},{"stage":"신청·선정","name":"고유번호증·사업자등록증","required":false,"status":"missing","matches":[]},{"stage":"신청·선정","name":"대표자 신분증 사본","required":false,"status":"missing","matches":[]},{"stage":"협약·교부","name":"협약서(약정서)","required":true,"status":"found","matches":["협약서.pdf"]},{"stage":"협약·교부","name":"보조금 교부신청서","required":true,"status":"found","matches":["교부신청서.hwp"]},{"stage":"협약·교부","name":"보조금 지급요청서","required":true,"status":"found","matches":["청구서.hwp"]},{"stage":"협약·교부","name":"청렴이행 서약서","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"활동 사진","required":true,"status":"found","matches":["통장사본.jpg","활동사진.zip"]},{"stage":"집행·중간","name":"출석부(참여자 확인)","required":true,"status":"found","matches":["출석 서명부.pdf"]},{"stage":"집행·중간","name":"회의록","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"강사 이력서·프로필","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"견적서","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"계약서(용역·물품)","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"중간보고서","required":false,"status":"missing","matches":[]},{"stage":"정산·결과","name":"결과보고서","required":true,"status":"found","matches":["결과보고서.hwp"]},{"stage":"정산·결과","name":"정산보고서","required":true,"status":"found","matches":["정산보고서.hwp"]},{"stage":"정산·결과","name":"집행내역 총괄표","required":true,"status":"found","matches":["지출내역.xlsx"]},{"stage":"정산·결과","name":"지출 증빙(영수증·전표)","required":true,"status":"found","matches":["세금계산서.pdf"]},{"stage":"정산·결과","name":"이체(입금) 확인증","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"통장 거래내역","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"강사비·인건비 지급 증빙","required":false,"status":"missing","matches":[]},{"stage":"정산·결과","name":"집행잔액 반납 확인","required":false,"status":"missing","matches":[]}]},{"group":"충주 청년기획단","fileCount":11,"requiredTotal":17,"requiredFound":9,"missingRequired":["보조금 교부신청서","보조금 지급요청서","결과보고서","정산보고서","집행내역 총괄표","지출 증빙(영수증·전표)","이체(입금) 확인증","통장 거래내역"],"missingOptional":["단체 증빙(정관·규약)","고유번호증·사업자등록증","대표자 신분증 사본","청렴이행 서약서","강사 이력서·프로필","견적서","계약서(용역·물품)","중간보고서","강사비·인건비 지급 증빙","집행잔액 반납 확인"],"checks":[{"stage":"신청·선정","name":"참여신청서","required":true,"status":"found","matches":["참가신청서.pdf"]},{"stage":"신청·선정","name":"사업계획서","required":true,"status":"found","matches":["사업계획서.hwp"]},{"stage":"신청·선정","name":"예산(산출)내역서","required":true,"status":"found","matches":["소요예산 내역.xlsx"]},{"stage":"신청·선정","name":"개인정보 수집·이용 동의서","required":true,"status":"found","matches":["개인정보동의서.pdf"]},{"stage":"신청·선정","name":"회원(참여자) 명부","required":true,"status":"found","matches":["참여자명단.xlsx"]},{"stage":"신청·선정","name":"통장 사본","required":true,"status":"found","matches":["통장사본.pdf"]},{"stage":"신청·선정","name":"단체 증빙(정관·규약)","required":false,"status":"missing","matches":[]},{"stage":"신청·선정","name":"고유번호증·사업자등록증","required":false,"status":"missing","matches":[]},{"stage":"신청·선정","name":"대표자 신분증 사본","required":false,"status":"missing","matches":[]},{"stage":"협약·교부","name":"협약서(약정서)","required":true,"status":"found","matches":["협약서.pdf"]},{"stage":"협약·교부","name":"보조금 교부신청서","required":true,"status":"missing","matches":[]},{"stage":"협약·교부","name":"보조금 지급요청서","required":true,"status":"missing","matches":[]},{"stage":"협약·교부","name":"청렴이행 서약서","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"활동 사진","required":true,"status":"found","matches":["사진/IMG_2201.jpg","사진/IMG_2202.jpg"]},{"stage":"집행·중간","name":"출석부(참여자 확인)","required":true,"status":"found","matches":["출석부.xlsx"]},{"stage":"집행·중간","name":"회의록","required":false,"status":"found","matches":["회의록_1차.hwp"]},{"stage":"집행·중간","name":"강사 이력서·프로필","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"견적서","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"계약서(용역·물품)","required":false,"status":"missing","matches":[]},{"stage":"집행·중간","name":"중간보고서","required":false,"status":"missing","matches":[]},{"stage":"정산·결과","name":"결과보고서","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"정산보고서","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"집행내역 총괄표","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"지출 증빙(영수증·전표)","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"이체(입금) 확인증","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"통장 거래내역","required":true,"status":"missing","matches":[]},{"stage":"정산·결과","name":"강사비·인건비 지급 증빙","required":false,"status":"missing","matches":[]},{"stage":"정산·결과","name":"집행잔액 반납 확인","required":false,"status":"missing","matches":[]}]}]};
+
+  const STATUS_LABEL = { found: '제출', missing: '누락', optional: '미제출' };
+  const MARK = { found: '✓', missing: '✕', optional: '–' };
+
+  const state = { stage: 'ALL', onlyMissing: false, sortMissing: false };
+
+  try {
+    const saved = JSON.parse(localStorage.getItem('doc-check-view') || '{}');
+    if (typeof saved.stage === 'string') state.stage = saved.stage;
+    if (typeof saved.onlyMissing === 'boolean') state.onlyMissing = saved.onlyMissing;
+    if (typeof saved.sortMissing === 'boolean') state.sortMissing = saved.sortMissing;
+  } catch (e) { /* 저장값이 없거나 못 읽으면 기본값으로 */ }
+
+  function persist() {
+    try {
+      localStorage.setItem('doc-check-view', JSON.stringify({
+        stage: state.stage,
+        onlyMissing: state.onlyMissing,
+        sortMissing: state.sortMissing,
+      }));
+    } catch (e) { /* 저장 불가 환경은 무시 */ }
+  }
+
+  function cellStatus(check) {
+    if (check.status === 'found') return 'found';
+    return check.required ? 'missing' : 'optional';
+  }
+
+  function visibleItems() {
+    return DATA.items.filter((it) => state.stage === 'ALL' || it.stage === state.stage);
+  }
+
+  function visibleGroups() {
+    const items = visibleItems();
+    const keys = new Set(items.map((it) => it.stage + ' ' + it.name));
+    return DATA.groups
+      .map((g) => {
+        const checks = g.checks.filter((c) => keys.has(c.stage + ' ' + c.name));
+        const required = checks.filter((c) => c.required);
+        const found = required.filter((c) => c.status === 'found').length;
+        return {
+          ...g,
+          scopedChecks: checks,
+          scopedRequired: required.length,
+          scopedFound: found,
+          scopedMissing: required.filter((c) => c.status === 'missing').map((c) => c.name),
+        };
+      })
+      .filter((g) => !state.onlyMissing || g.scopedMissing.length > 0);
+  }
+
+  function renderMeta() {
+    const folder = DATA.root.split(/[\\\/]/).filter(Boolean).pop() || DATA.root;
+    document.getElementById('title').textContent = folder + ' 서류 현황';
+    document.title = folder + ' 서류 현황';
+    document.getElementById('meta-root').textContent = DATA.root;
+    document.getElementById('meta-time').textContent = new Date(DATA.generatedAt)
+      .toLocaleString('ko-KR', { dateStyle: 'medium', timeStyle: 'short' });
+    document.getElementById('meta-checklist').textContent =
+      '필수 ' + DATA.items.filter((i) => i.required).length + '종 · 선택 ' + DATA.items.filter((i) => !i.required).length + '종';
+  }
+
+  function renderTiles() {
+    const groups = DATA.groups;
+    const complete = groups.filter((g) => g.missingRequired.length === 0).length;
+    const requiredTotal = groups.reduce((sum, g) => sum + g.requiredTotal, 0);
+    const requiredFound = groups.reduce((sum, g) => sum + g.requiredFound, 0);
+    const missingCount = groups.reduce((sum, g) => sum + g.missingRequired.length, 0);
+    const rate = requiredTotal === 0 ? 100 : Math.round((requiredFound / requiredTotal) * 100);
+
+    const tiles = [
+      { dt: '점검 단체', dd: groups.length + '<small>곳</small>' },
+      { dt: '필수 서류 완비', dd: complete + '<small>곳</small>', cls: complete === groups.length ? 'is-ok' : '' },
+      { dt: '보완 필요', dd: (groups.length - complete) + '<small>곳</small>', cls: groups.length - complete > 0 ? 'is-alert' : 'is-ok' },
+      { dt: '전체 필수 충족률', dd: rate + '<small>%</small>' },
+      { dt: '받아야 할 서류', dd: missingCount + '<small>건</small>', cls: missingCount > 0 ? 'is-alert' : 'is-ok' },
+    ];
+
+    document.getElementById('tiles').innerHTML = tiles
+      .map((t) => '<div class="tile ' + (t.cls || '') + '"><dt>' + t.dt + '</dt><dd>' + t.dd + '</dd></div>')
+      .join('');
+  }
+
+  function renderChase() {
+    const tally = new Map();
+    for (const g of DATA.groups) {
+      for (const name of g.missingRequired) {
+        if (!tally.has(name)) tally.set(name, []);
+        tally.get(name).push(g.group);
+      }
+    }
+    const rows = [...tally.entries()].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'ko'));
+    const host = document.getElementById('chase');
+
+    if (rows.length === 0) {
+      host.innerHTML = '<div class="chase-empty">모든 단체가 필수 서류를 제출했습니다. 독촉할 항목이 없습니다.</div>';
+      return;
+    }
+
+    host.innerHTML = rows
+      .map(([name, groups]) => {
+        const shown = groups.slice(0, 6).join(', ');
+        const extra = groups.length > 6 ? ' 외 ' + (groups.length - 6) + '곳' : '';
+        return '<div class="chase-row">' +
+          '<span class="chase-doc">' + escapeHtml(name) + '</span>' +
+          '<span class="chase-count">' + groups.length + '곳</span>' +
+          '<span class="chase-groups">' + escapeHtml(shown) + extra + '</span>' +
+          '</div>';
+      })
+      .join('');
+  }
+
+  function renderStageFilter() {
+    const select = document.getElementById('stage-filter');
+    const options = ['ALL', ...DATA.stages];
+    select.innerHTML = options
+      .map((s) => '<option value="' + escapeHtml(s) + '"' + (s === state.stage ? ' selected' : '') + '>' +
+        (s === 'ALL' ? '전체 단계' : escapeHtml(s)) + '</option>')
+      .join('');
+    if (!options.includes(state.stage)) {
+      state.stage = 'ALL';
+      select.value = 'ALL';
+    }
+  }
+
+  function renderMatrix() {
+    const items = visibleItems();
+    const groups = visibleGroups();
+    const table = document.getElementById('matrix');
+    const caption = table.querySelector('caption');
+    const span = groups.length + 2; // 서류명 열 + 단체 열들 + 집계 열
+
+    // 서류별 미제출 단체 수를 미리 센다 (행 끝 집계·정렬에 쓴다)
+    const rows = items.map((it) => {
+      const cells = groups.map((g) => {
+        const check = g.scopedChecks.find((c) => c.stage === it.stage && c.name === it.name);
+        return { group: g.group, check, status: cellStatus(check) };
+      });
+      return {
+        item: it,
+        cells,
+        submitted: cells.filter((c) => c.status === 'found').length,
+        missing: cells.filter((c) => c.status === 'missing').length,
+      };
+    });
+
+    if (state.sortMissing) {
+      rows.sort((a, b) => b.missing - a.missing || a.item.name.localeCompare(b.item.name, 'ko'));
+    }
+
+    let html = '<thead><tr>';
+    html += '<th class="corner" scope="col"><span>서류 ↓ / 단체 →</span></th>';
+    html += groups
+      .map((g) => {
+        const rate = g.scopedRequired === 0 ? 100 : Math.round((g.scopedFound / g.scopedRequired) * 100);
+        const cls = g.scopedMissing.length === 0 ? 'is-complete' : 'has-missing';
+        return '<th class="group-col ' + cls + '" scope="col" title="' +
+          escapeHtml(g.group + ' — 필수 ' + g.scopedFound + '/' + g.scopedRequired + ', 파일 ' + g.fileCount + '건') +
+          '"><span class="col-inner"><span class="vertical">' + escapeHtml(g.group) + '</span>' +
+          '<span class="col-rate">' + rate + '%</span></span></th>';
+      })
+      .join('');
+    html += '<th class="corner-right" scope="col">제출</th>';
+    html += '</tr></thead><tbody>';
+
+    if (groups.length === 0) {
+      html += '<tr><td colspan="' + span + '" style="padding:16px">조건에 맞는 단체가 없습니다.</td></tr>';
+    }
+
+    let lastStage = null;
+    for (const row of rows) {
+      // 정렬 모드가 아니면 단계별로 구분 행을 넣는다.
+      if (!state.sortMissing && row.item.stage !== lastStage) {
+        lastStage = row.item.stage;
+        html += '<tr class="band"><th colspan="' + span + '" scope="colgroup"><span>' +
+          escapeHtml(row.item.stage) + '</span></th></tr>';
+      }
+
+      const badge = row.item.required
+        ? '<span class="req">필수</span>'
+        : '<span class="req optional">선택</span>';
+      const stageTag = state.sortMissing ? '<span class="stage-tag">' + escapeHtml(row.item.stage) + '</span>' : '';
+
+      html += '<tr>';
+      html += '<th class="doc-row-head" scope="row">' + escapeHtml(row.item.name) + badge + stageTag + '</th>';
+      for (const cell of row.cells) {
+        html += '<td class="cell ' + cell.status + '" tabindex="0" role="button" ' +
+          'data-group="' + escapeHtml(cell.group) + '" data-name="' + escapeHtml(row.item.name) + '" ' +
+          'title="' + escapeHtml(cell.group + ' · ' + row.item.name + ' — ' + STATUS_LABEL[cell.status]) + '">' +
+          MARK[cell.status] + '</td>';
+      }
+      // 필수인데 덜 걷혔으면 빨강, 선택 서류의 미제출은 회색으로 둔다.
+      let countClass = '';
+      if (row.submitted < groups.length) countClass = row.item.required ? ' partial' : ' neutral';
+      html += '<td class="row-count' + countClass + '">' + row.submitted + '/' + groups.length + '</td>';
+      html += '</tr>';
+    }
+    html += '</tbody>';
+
+    table.innerHTML = html;
+    table.prepend(caption);
+    bindCells();
+  }
+
+  function bindCells() {
+    for (const cell of document.querySelectorAll('td.cell')) {
+      cell.addEventListener('click', () => showDetail(cell));
+      cell.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showDetail(cell);
+        }
+      });
+    }
+  }
+
+  function showDetail(cell) {
+    const groupName = cell.dataset.group;
+    const docName = cell.dataset.name;
+    const group = DATA.groups.find((g) => g.group === groupName);
+    const check = group && group.checks.find((c) => c.name === docName);
+    if (!check) return;
+
+    for (const other of document.querySelectorAll('td.cell.is-active')) other.classList.remove('is-active');
+    cell.classList.add('is-active');
+
+    const status = cellStatus(check);
+    const detail = document.getElementById('detail');
+    let body = '';
+
+    if (check.matches.length > 0) {
+      body = '<p class="detail-sub">이 파일이 잡혔습니다. 서류 성격과 다르면 체크리스트 키워드를 고치세요.</p>' +
+        '<ul class="files">' + check.matches.map((f) => '<li>' + escapeHtml(f) + '</li>').join('') + '</ul>';
+    } else if (check.required) {
+      body = '<p class="detail-sub">이 단체 폴더에서 찾지 못했습니다. <b>받아야 하는 필수 서류</b>입니다.</p>';
+    } else {
+      body = '<p class="detail-sub">찾지 못했으나 선택 서류이므로 사업 성격에 따라 생략할 수 있습니다.</p>';
+    }
+
+    detail.innerHTML = '<p class="detail-title">' + escapeHtml(groupName) + ' · ' + escapeHtml(docName) +
+      ' <span class="pill ' + status + '">' + STATUS_LABEL[status] + '</span></p>' + body;
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, (ch) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    })[ch]);
+  }
+
+  document.getElementById('stage-filter').addEventListener('change', (event) => {
+    state.stage = event.target.value;
+    persist();
+    renderMatrix();
+  });
+
+  const onlyMissing = document.getElementById('only-missing');
+  onlyMissing.checked = state.onlyMissing;
+  onlyMissing.addEventListener('change', (event) => {
+    state.onlyMissing = event.target.checked;
+    persist();
+    renderMatrix();
+  });
+
+  const sortMissing = document.getElementById('sort-missing');
+  sortMissing.checked = state.sortMissing;
+  sortMissing.addEventListener('change', (event) => {
+    state.sortMissing = event.target.checked;
+    persist();
+    renderMatrix();
+  });
+
+  renderMeta();
+  renderTiles();
+  renderChase();
+  renderStageFilter();
+  renderMatrix();
+</script>

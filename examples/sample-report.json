@@ -1,0 +1,916 @@
+{
+  "generatedAt": "2026-09-03T13:42:03.446Z",
+  "root": "[예시 데이터] 2026 커뮤니티 사업 — 실제 사업 폴더가 아닙니다",
+  "checklist": "C:\\Users\\love-\\.claude\\skills\\doc-check\\references\\checklist.md",
+  "stageFilter": null,
+  "stages": [
+    "신청·선정",
+    "협약·교부",
+    "집행·중간",
+    "정산·결과"
+  ],
+  "items": [
+    {
+      "stage": "신청·선정",
+      "name": "참여신청서",
+      "required": true
+    },
+    {
+      "stage": "신청·선정",
+      "name": "사업계획서",
+      "required": true
+    },
+    {
+      "stage": "신청·선정",
+      "name": "예산(산출)내역서",
+      "required": true
+    },
+    {
+      "stage": "신청·선정",
+      "name": "개인정보 수집·이용 동의서",
+      "required": true
+    },
+    {
+      "stage": "신청·선정",
+      "name": "회원(참여자) 명부",
+      "required": true
+    },
+    {
+      "stage": "신청·선정",
+      "name": "통장 사본",
+      "required": true
+    },
+    {
+      "stage": "신청·선정",
+      "name": "단체 증빙(정관·규약)",
+      "required": false
+    },
+    {
+      "stage": "신청·선정",
+      "name": "고유번호증·사업자등록증",
+      "required": false
+    },
+    {
+      "stage": "신청·선정",
+      "name": "대표자 신분증 사본",
+      "required": false
+    },
+    {
+      "stage": "협약·교부",
+      "name": "협약서(약정서)",
+      "required": true
+    },
+    {
+      "stage": "협약·교부",
+      "name": "보조금 교부신청서",
+      "required": true
+    },
+    {
+      "stage": "협약·교부",
+      "name": "보조금 지급요청서",
+      "required": true
+    },
+    {
+      "stage": "협약·교부",
+      "name": "청렴이행 서약서",
+      "required": false
+    },
+    {
+      "stage": "집행·중간",
+      "name": "활동 사진",
+      "required": true
+    },
+    {
+      "stage": "집행·중간",
+      "name": "출석부(참여자 확인)",
+      "required": true
+    },
+    {
+      "stage": "집행·중간",
+      "name": "회의록",
+      "required": false
+    },
+    {
+      "stage": "집행·중간",
+      "name": "강사 이력서·프로필",
+      "required": false
+    },
+    {
+      "stage": "집행·중간",
+      "name": "견적서",
+      "required": false
+    },
+    {
+      "stage": "집행·중간",
+      "name": "계약서(용역·물품)",
+      "required": false
+    },
+    {
+      "stage": "집행·중간",
+      "name": "중간보고서",
+      "required": false
+    },
+    {
+      "stage": "정산·결과",
+      "name": "결과보고서",
+      "required": true
+    },
+    {
+      "stage": "정산·결과",
+      "name": "정산보고서",
+      "required": true
+    },
+    {
+      "stage": "정산·결과",
+      "name": "집행내역 총괄표",
+      "required": true
+    },
+    {
+      "stage": "정산·결과",
+      "name": "지출 증빙(영수증·전표)",
+      "required": true
+    },
+    {
+      "stage": "정산·결과",
+      "name": "이체(입금) 확인증",
+      "required": true
+    },
+    {
+      "stage": "정산·결과",
+      "name": "통장 거래내역",
+      "required": true
+    },
+    {
+      "stage": "정산·결과",
+      "name": "강사비·인건비 지급 증빙",
+      "required": false
+    },
+    {
+      "stage": "정산·결과",
+      "name": "집행잔액 반납 확인",
+      "required": false
+    }
+  ],
+  "groups": [
+    {
+      "group": "가온마을 공동체",
+      "fileCount": 17,
+      "requiredTotal": 17,
+      "requiredFound": 17,
+      "missingRequired": [],
+      "missingOptional": [
+        "단체 증빙(정관·규약)",
+        "고유번호증·사업자등록증",
+        "대표자 신분증 사본",
+        "청렴이행 서약서",
+        "회의록",
+        "강사 이력서·프로필",
+        "견적서",
+        "계약서(용역·물품)",
+        "중간보고서",
+        "강사비·인건비 지급 증빙",
+        "집행잔액 반납 확인"
+      ],
+      "checks": [
+        {
+          "stage": "신청·선정",
+          "name": "참여신청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "보조금 교부신청서.hwp",
+            "참여신청서_가온마을.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "사업계획서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "사업계획서(최종).hwp"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "예산(산출)내역서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "예산 산출내역서.xlsx"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "개인정보 수집·이용 동의서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "개인정보 수집이용 동의서.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "회원(참여자) 명부",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "회원명부.xlsx"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "통장 사본",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "통장사본.jpg"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "단체 증빙(정관·규약)",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "신청·선정",
+          "name": "고유번호증·사업자등록증",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "신청·선정",
+          "name": "대표자 신분증 사본",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "협약·교부",
+          "name": "협약서(약정서)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "협약서.pdf"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "보조금 교부신청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "보조금 교부신청서.hwp"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "보조금 지급요청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "지급요청서.hwp"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "청렴이행 서약서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "활동 사진",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "집행·중간/활동사진_01.jpg",
+            "통장사본.jpg"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "출석부(참여자 확인)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "집행·중간/출석부.xlsx"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "회의록",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "강사 이력서·프로필",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "견적서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "계약서(용역·물품)",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "중간보고서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "결과보고서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산/결과보고서.hwp"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "정산보고서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산/결과보고서.hwp",
+            "정산/영수증 모음.pdf",
+            "정산/이체확인증.pdf",
+            "정산/정산보고서.hwp",
+            "정산/집행내역 총괄표.xlsx",
+            "정산/통장 거래내역.pdf"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "집행내역 총괄표",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산/집행내역 총괄표.xlsx"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "지출 증빙(영수증·전표)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산/영수증 모음.pdf"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "이체(입금) 확인증",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산/이체확인증.pdf"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "통장 거래내역",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산/통장 거래내역.pdf"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "강사비·인건비 지급 증빙",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "집행잔액 반납 확인",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        }
+      ]
+    },
+    {
+      "group": "달래안 주민모임",
+      "fileCount": 15,
+      "requiredTotal": 17,
+      "requiredFound": 14,
+      "missingRequired": [
+        "개인정보 수집·이용 동의서",
+        "이체(입금) 확인증",
+        "통장 거래내역"
+      ],
+      "missingOptional": [
+        "고유번호증·사업자등록증",
+        "대표자 신분증 사본",
+        "청렴이행 서약서",
+        "회의록",
+        "강사 이력서·프로필",
+        "견적서",
+        "계약서(용역·물품)",
+        "중간보고서",
+        "강사비·인건비 지급 증빙",
+        "집행잔액 반납 확인"
+      ],
+      "checks": [
+        {
+          "stage": "신청·선정",
+          "name": "참여신청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "교부신청서.hwp",
+            "지원서.hwp"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "사업계획서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "활동계획서.hwp"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "예산(산출)내역서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "예산내역.xlsx"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "개인정보 수집·이용 동의서",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "신청·선정",
+          "name": "회원(참여자) 명부",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "명부.xlsx",
+            "출석 서명부.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "통장 사본",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "통장사본.jpg"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "단체 증빙(정관·규약)",
+          "required": false,
+          "status": "found",
+          "matches": [
+            "정관.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "고유번호증·사업자등록증",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "신청·선정",
+          "name": "대표자 신분증 사본",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "협약·교부",
+          "name": "협약서(약정서)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "협약서.pdf"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "보조금 교부신청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "교부신청서.hwp"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "보조금 지급요청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "청구서.hwp"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "청렴이행 서약서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "활동 사진",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "통장사본.jpg",
+            "활동사진.zip"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "출석부(참여자 확인)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "출석 서명부.pdf"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "회의록",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "강사 이력서·프로필",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "견적서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "계약서(용역·물품)",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "중간보고서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "결과보고서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "결과보고서.hwp"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "정산보고서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "정산보고서.hwp"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "집행내역 총괄표",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "지출내역.xlsx"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "지출 증빙(영수증·전표)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "세금계산서.pdf"
+          ]
+        },
+        {
+          "stage": "정산·결과",
+          "name": "이체(입금) 확인증",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "통장 거래내역",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "강사비·인건비 지급 증빙",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "집행잔액 반납 확인",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        }
+      ]
+    },
+    {
+      "group": "충주 청년기획단",
+      "fileCount": 11,
+      "requiredTotal": 17,
+      "requiredFound": 9,
+      "missingRequired": [
+        "보조금 교부신청서",
+        "보조금 지급요청서",
+        "결과보고서",
+        "정산보고서",
+        "집행내역 총괄표",
+        "지출 증빙(영수증·전표)",
+        "이체(입금) 확인증",
+        "통장 거래내역"
+      ],
+      "missingOptional": [
+        "단체 증빙(정관·규약)",
+        "고유번호증·사업자등록증",
+        "대표자 신분증 사본",
+        "청렴이행 서약서",
+        "강사 이력서·프로필",
+        "견적서",
+        "계약서(용역·물품)",
+        "중간보고서",
+        "강사비·인건비 지급 증빙",
+        "집행잔액 반납 확인"
+      ],
+      "checks": [
+        {
+          "stage": "신청·선정",
+          "name": "참여신청서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "참가신청서.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "사업계획서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "사업계획서.hwp"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "예산(산출)내역서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "소요예산 내역.xlsx"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "개인정보 수집·이용 동의서",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "개인정보동의서.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "회원(참여자) 명부",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "참여자명단.xlsx"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "통장 사본",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "통장사본.pdf"
+          ]
+        },
+        {
+          "stage": "신청·선정",
+          "name": "단체 증빙(정관·규약)",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "신청·선정",
+          "name": "고유번호증·사업자등록증",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "신청·선정",
+          "name": "대표자 신분증 사본",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "협약·교부",
+          "name": "협약서(약정서)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "협약서.pdf"
+          ]
+        },
+        {
+          "stage": "협약·교부",
+          "name": "보조금 교부신청서",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "협약·교부",
+          "name": "보조금 지급요청서",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "협약·교부",
+          "name": "청렴이행 서약서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "활동 사진",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "사진/IMG_2201.jpg",
+            "사진/IMG_2202.jpg"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "출석부(참여자 확인)",
+          "required": true,
+          "status": "found",
+          "matches": [
+            "출석부.xlsx"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "회의록",
+          "required": false,
+          "status": "found",
+          "matches": [
+            "회의록_1차.hwp"
+          ]
+        },
+        {
+          "stage": "집행·중간",
+          "name": "강사 이력서·프로필",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "견적서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "계약서(용역·물품)",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "집행·중간",
+          "name": "중간보고서",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "결과보고서",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "정산보고서",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "집행내역 총괄표",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "지출 증빙(영수증·전표)",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "이체(입금) 확인증",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "통장 거래내역",
+          "required": true,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "강사비·인건비 지급 증빙",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        },
+        {
+          "stage": "정산·결과",
+          "name": "집행잔액 반납 확인",
+          "required": false,
+          "status": "missing",
+          "matches": []
+        }
+      ]
+    }
+  ]
+}
